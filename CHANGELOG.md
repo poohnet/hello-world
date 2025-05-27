@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/poohnet/hello-world/compare/v1.1.0...v1.1.1) (2025-05-27)
+
+
+### Bug Fixes
+
+* The world is not enough ([9eafb95](https://github.com/poohnet/hello-world/commit/9eafb95230edceae75cc7afb0161fb222b879fb3))
+
 # [1.1.0](https://github.com/poohnet/hello-world/compare/v1.0.0...v1.1.0) (2025-05-27)
 
 
