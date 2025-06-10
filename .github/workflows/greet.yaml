@@ -1,0 +1,20 @@
+name: Greet User
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use custom greeting action
+        id: greet_step
+        uses: poohnet/gh-actions/hello@main
+        with:
+          username: Alice
+
+      - name: Print message
+        run: |
+          echo "Greeting: ${{ steps.greet_step.outputs.message }}"
