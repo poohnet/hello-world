@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read # for checkout
@@ -10,18 +11,21 @@ permissions:
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: poohnet-arc-runner-set
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
     steps:
+      - name: Greeting
+        shell: bash
+        run: echo "🎉 This job uses runner scale set runners!"
       - name: Checkout
         uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: "no-token-needed"
+#      - name: Semantic Release
+#        uses: cycjimmy/semantic-release-action@v4
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          NPM_TOKEN: "no-token-needed"
